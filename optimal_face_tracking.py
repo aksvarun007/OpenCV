@@ -23,7 +23,7 @@ def camshift_tracking(img1, img2, bb):
 
 cap = cv2.VideoCapture(0)
 ret,img = cap.read()
-face_cascade=cv2.CascadeClassifier('/home/akshay/Documents/OpenCV/opencv-2.4.9/data/haarcascades/haarcascade_frontalface_default.xml')
+face_cascade=cv2.CascadeClassifier(sys.arg[1])//enter the location of the haar cascade xml file of your choice at this location.Found in data directory in opencv
 faces=face_cascade.detectMultiScale(img, scaleFactor=1.2, minNeighbors=2, minSize=(30,30), flags = cv.CV_HAAR_SCALE_IMAGE)
 
 #(x,y,w,h)=(faces.item(0),faces.item(1),faces.item(2),faces.item(3))
